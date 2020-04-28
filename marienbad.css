@@ -1,0 +1,28 @@
+body{
+    display: flex;
+}
+
+#marienbad-top{
+    width: -webkit-fill-available;
+    text-align: center;
+}
+
+#matches-top{
+    display: inherit;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.match-row{
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.match{
+    display: inline-block;
+    background: url(./SVGs/Asset\ 6.svg) no-repeat;
+    width: 30px;
+    height: 100px;
+    margin: 0;
+}
