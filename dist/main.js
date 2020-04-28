@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const Row = __webpack_require__(/*! ./row */ \"./src/row.js\")\nfunction Game(){\n    this.board = [new Row(1), new Row(3), new Row(5), new Row(7)]\n}\n\n\n\nmodule.exports = Game;\n\n//# sourceURL=webpack:///./src/game.js?");
+eval("const Row = __webpack_require__(/*! ./row */ \"./src/row.js\")\n\nfunction Game(){\n    this.board = [new Row(0), new Row(1), new Row(2), new Row(3)]\n    this.player1 = 'human'\n    this.player2 = 'computer'\n    this.currentPlayer = this.player1\n    this.nimSum = 0;\n}\n\nGame.prototype.turn = function turn(){\n\n}\n\n\nmodule.exports = Game;\n\n//# sourceURL=webpack:///./src/game.js?");
 
 /***/ }),
 
@@ -115,7 +115,7 @@ eval("const Game = __webpack_require__(/*! ./game */ \"./src/game.js\")\n\nfunct
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const GameView = __webpack_require__(/*! ./gameview */ \"./src/gameview.js\")\n\ndocument.addEventListener('DOMContentLoaded', function (){\n    console.log('okay buddy')\n    new GameView().start()\n} )\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const GameView = __webpack_require__(/*! ./gameview */ \"./src/gameview.js\")\n\ndocument.addEventListener('DOMContentLoaded', function (){\n    new GameView().start()\n} )\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -137,7 +137,7 @@ eval("\n\nfunction Match(){\n    this.removed = false\n    this.selected = false
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const Match = __webpack_require__(/*! ./match */ \"./src/match.js\")\n\n\nfunction Row(number){\n    this.number = number\n    this.matches = []\n}\n\nRow.prototype.populate = function populate(){\n    let times = this.number\n    while (time) {\n        this.matches << new Match\n        times -= 1\n    }\n}\n\nmodule.exports = Row\n\n//# sourceURL=webpack:///./src/row.js?");
+eval("const Match = __webpack_require__(/*! ./match */ \"./src/match.js\")\n\n\nfunction Row(number){\n    this.id = number\n    this.matches = this.populate()\n    this.empty = false    \n    this.frontend = document.getElementsByClassName('match-row')[this.id]\n}\n\nRow.prototype.populate = function populate(){\n    let times = this.id * 2 + 1\n    let matchArray = []\n    while (times) {\n        matchArray.push(new Match())\n        times -= 1\n    }\n    return matchArray\n}\n\nmodule.exports = Row\n\n//# sourceURL=webpack:///./src/row.js?");
 
 /***/ })
 
