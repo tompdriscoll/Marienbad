@@ -11,8 +11,10 @@ function Row(number){
 Row.prototype.populate = function populate(){
     let times = this.id * 2 + 1
     let matchArray = []
+    let id = this.id * this.id
     while (times) {
-        matchArray.push(new Match())
+        matchArray.push(new Match(id))
+        id += 1
         times -= 1
     }
     return matchArray

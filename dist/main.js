@@ -126,7 +126,7 @@ eval("const GameView = __webpack_require__(/*! ./gameview */ \"./src/gameview.js
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\nfunction Match(){\n    this.removed = false\n    this.selected = false\n}\n\nmodule.exports = Match;\n\n//# sourceURL=webpack:///./src/match.js?");
+eval("\n\nfunction Match(id){\n    this.id = id\n    this.removed = false\n    this.selected = false\n    this.frontend = document.getElementsByClassName('match')[id]\n}\n\nMatch.prototype.select = function select(){\n    \n}\n\nmodule.exports = Match;\n\n//# sourceURL=webpack:///./src/match.js?");
 
 /***/ }),
 
@@ -137,7 +137,7 @@ eval("\n\nfunction Match(){\n    this.removed = false\n    this.selected = false
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const Match = __webpack_require__(/*! ./match */ \"./src/match.js\")\n\n\nfunction Row(number){\n    this.id = number\n    this.matches = this.populate()\n    this.empty = false    \n    this.frontend = document.getElementsByClassName('match-row')[this.id]\n}\n\nRow.prototype.populate = function populate(){\n    let times = this.id * 2 + 1\n    let matchArray = []\n    while (times) {\n        matchArray.push(new Match())\n        times -= 1\n    }\n    return matchArray\n}\n\nmodule.exports = Row\n\n//# sourceURL=webpack:///./src/row.js?");
+eval("const Match = __webpack_require__(/*! ./match */ \"./src/match.js\")\n\n\nfunction Row(number){\n    this.id = number\n    this.matches = this.populate()\n    this.empty = false    \n    this.frontend = document.getElementsByClassName('match-row')[this.id]\n}\n\nRow.prototype.populate = function populate(){\n    let times = this.id * 2 + 1\n    let matchArray = []\n    let id = this.id * this.id\n    while (times) {\n        matchArray.push(new Match(id))\n        id += 1\n        times -= 1\n    }\n    return matchArray\n}\n\nmodule.exports = Row\n\n//# sourceURL=webpack:///./src/row.js?");
 
 /***/ })
 
