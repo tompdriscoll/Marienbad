@@ -13,7 +13,7 @@ Row.prototype.populate = function populate(){
     let matchArray = []
     let id = this.id * this.id
     while (times) {
-        matchArray.push(new Match(id))
+        matchArray.push(new Match(id, this.id))
         id += 1
         times -= 1
     }

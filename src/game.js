@@ -5,11 +5,14 @@ function Game(){
     this.player1 = 'human'
     this.player2 = 'computer'
     this.currentPlayer = this.player1
+    this.selected = []
     this.nimSum = 0;
 }
 
 Game.prototype.turn = function turn(){
-
+    if (this.currentPlayer = this.player1){
+        
+    }
 }
 
 

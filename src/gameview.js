@@ -1,5 +1,7 @@
 const Game = require('./game')
 
+
+
 function Gameview(){
     this.game = null
 }

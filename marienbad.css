@@ -30,3 +30,11 @@ h1{
     height: 100px;
     margin: 0;
 }
+
+.match:hover{
+    cursor: pointer;
+}
+
+.selected{
+    background: white;
+}
