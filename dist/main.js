@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const Row = __webpack_require__(/*! ./row */ \"./src/row.js\")\n\nfunction Game(){\n    this.board = [new Row(0), new Row(1), new Row(2), new Row(3)]\n    this.player1 = 'human'\n    this.player2 = 'computer'\n    this.currentPlayer = this.player1\n    this.selected = []\n    this.nimSum = 0;\n}\n\nGame.prototype.turn = function turn(){\n    if (this.currentPlayer = this.player1){\n        \n    }\n}\n\n\nmodule.exports = Game;\n\n//# sourceURL=webpack:///./src/game.js?");
+eval("const Row = __webpack_require__(/*! ./row */ \"./src/row.js\")\n\nlet matches = Array.from(document.getElementsByClassName('match'))\nconsole.log(matches)\nmatches.forEach( match => {\n    match.addEventListener('mousedown', function(e) {\n        \n        e.preventDefault()\n        match.classList.toggle('selected')\n    } )\n})\n\nfunction Game(){\n    this.board = [new Row(0), new Row(1), new Row(2), new Row(3)]\n    this.player1 = 'human'\n    this.player2 = 'computer'\n    this.currentPlayer = this.player1\n    this.selected = []\n    this.nimSum = 0;\n}\n\nGame.prototype.turn = function turn(){\n    if (this.currentPlayer = this.player1){\n        \n    }\n}\n\n\nmodule.exports = Game;\n\n//# sourceURL=webpack:///./src/game.js?");
 
 /***/ }),
 
@@ -115,7 +115,7 @@ eval("const Game = __webpack_require__(/*! ./game */ \"./src/game.js\")\n\n\n\nf
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const GameView = __webpack_require__(/*! ./gameview */ \"./src/gameview.js\")\n\ndocument.addEventListener('DOMContentLoaded', function (){\n\n    let matches = Array.from(document.getElementsByClassName('match'))\n    console.log(matches)\n    matches.forEach( match => {\n        match.addEventListener('mousedown', function(e) {\n            e.preventDefault()\n            // console.log('smelly')\n            match.classList.toggle('selected')\n        } )\n    })\n\n    new GameView().start()\n} )\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const GameView = __webpack_require__(/*! ./gameview */ \"./src/gameview.js\")\n\ndocument.addEventListener('DOMContentLoaded', function (){\n\n\n\n    new GameView().start()\n} )\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
